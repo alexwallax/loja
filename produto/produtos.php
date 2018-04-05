@@ -1,9 +1,9 @@
 <?php
-require_once "./classes/dao/Conexao.php";
-require_once "./classes/modelo/Categoria.php";
-require_once "./classes/dao/CategoriaDAO.php";
-require_once "./classes/modelo/Produto.php";
-require_once "./classes/dao/ProdutoDAO.php";
+require_once "../classes/dao/Conexao.php";
+require_once "../classes/modelo/Categoria.php";
+require_once "../classes/dao/CategoriaDAO.php";
+require_once "../classes/modelo/Produto.php";
+require_once "../classes/dao/ProdutoDAO.php";
 
 $produto = new Produto();
 $produtoDao = new ProdutoDAO();
@@ -43,7 +43,7 @@ if (isset($_POST['remover'])) {
     <head>
         <meta charset="UTF-8">
         <title>Produtos</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
     </head>
     <body>
         <div class="container">
