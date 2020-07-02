@@ -40,7 +40,21 @@ class CategoriaDAO {
     }
     
     public function buscarPorId($id) {
+        $sql = "select * from categorias = {$id}";
+        $resultado = mysqli_query($this->conexao, $sql);
+        $categoria = new Categoria();
+   
+        //**********
+        while ($categoria_array = mysqli_fetch_array($resultado)) {
+            $categoria = new Categoria();
+            $categoria->setId($produto_array[0]);
+            $categoria->setNome($produto_array[1]);    
+        }
+ 
+        return $categoria;
         
-    }
+        }
+    
+
 
 }

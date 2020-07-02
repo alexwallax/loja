@@ -5893,6 +5893,7 @@ button.close {
   transform: translateX(0);
 }
 
+/* *****************************************************
 @supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
   .carousel-item-next.carousel-item-left,
   .carousel-item-prev.carousel-item-right {
@@ -5900,7 +5901,8 @@ button.close {
     transform: translate3d(0, 0, 0);
   }
 }
-
+ */
+ 
 .carousel-item-next,
 .active.carousel-item-right {
   -webkit-transform: translateX(100%);
