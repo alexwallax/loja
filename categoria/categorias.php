@@ -2,6 +2,28 @@
 require_once "../classes/dao/Conexao.php";
 require_once "../classes/modelo/Categoria.php";
 require_once "../classes/dao/CategoriaDAO.php";
+
+$categoria = new Categoria();
+$categoriaDAO = new CategoriaDAO();
+
+if (isset($_POST['cadastrar'])) {
+    $categoria = new Categoria();
+    $categoria->setId($_POST['categoria']);
+
+
+    if ($categoria->getId() == "") {
+        $categoriaDAO->inserir($categoria);
+    } else {
+        $categoriaDAO->editar($categoria);
+    }
+    
+    $categoria = new Categoria();
+}
+
+if (isset($_POST['editar'])) {
+    $categoria = $categoriaDAO->buscarPorId($_POST['id']);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +31,17 @@ require_once "../classes/dao/CategoriaDAO.php";
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <div class="container">
+        
+        <!--cabecalho-->
+        <?php
+            require_once '../assets/cabecalho.php';
+        ?>
+        <!--fim cabecalho-->
+        
+        <div class="container conteudo">
             <div class="row">
                 <div class="col-md-6">
                     <fieldset>
@@ -33,18 +63,23 @@ require_once "../classes/dao/CategoriaDAO.php";
                                     <tr>
                                         <td><?= $categoria->getId() ?></td>
                                         <td><?= $categoria->getNome() ?></td>
-                                        <td>
-                                            <form action="editar-categoria.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $categoria->getId() ?>">
-                                                <button type="submit" class="btn btn-primary">editar</button>
-                                            </form>
-                                        </td>
+                                        
                                         <td>
                                             <form action="remove-categoria.php" method="post">
                                                 <input type="hidden" name="id" value="<?= $categoria->getId() ?>">
                                                 <button type="submit" class="btn btn-danger">remover</button>
                                             </form>
+                                        </td>                                       
+                                        
+                                        <!--
+                                        <td>
+                                            <form action="categorias.php" method="post">
+                                                <input type="hidden" name="id" value="<?= $categoria->getId() ?>">
+                                                <button type="submit" class="btn btn-primary" name="editar">editar</button>
+                                            </form>
                                         </td>
+                                        -->
+
                                     </tr>
                                     <?php
                                 }
@@ -61,11 +96,16 @@ require_once "../classes/dao/CategoriaDAO.php";
                                 <label for="nome">Categoria</label>
                                 <input type="text" id="nome" name="nome" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary" name="cadastrar">Cadastrar</button>
                         </form>
                     </fieldset>
                 </div>
             </div>
         </div>
+        
+        <?php
+            require_once '../assets/rodape.php';
+        ?>
+
     </body>
 </html>

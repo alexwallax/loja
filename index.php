@@ -8,42 +8,11 @@
     </head>
     <body>
         
-        <!-- cabeçalho -->    
-        <header>
-            <div class="cabecalho container">
-                <div class="row">
-                    
-
-                    
-                    <div id="cabecalho" class="col-sm-12">
-                    
-                        <div class="col-sm-6 logo">
-                            LOGO
-                        </div><!--Fim logo-->
-                        
-                        <div class="col-sm-6 menu">
-                            
-                            <ul>
-                                <li>MENU-1</li>
-                                <li>MENU-2</li>
-                                <li>MENU-3</li>
-                            </ul>
-                            
-                        </div><!--Fim menu-->
-                        
-                    </div><!--Fim cabecalho-->
-                    
-
-                    
-                    
-                </div><!--Fim row-->
-            </div>
-        </header>
-        <!-- fim do cabeçalho -->   
+        <?php
+            require_once './assets/cabecalho.php';
+        ?>
         
-        
-        
-        <div class="container">
+        <div class="container conteudo02">
             
             <div class="row">
                 
@@ -74,17 +43,9 @@
         </div><!--fim container-->    
         
         
-        <!-- rodape -->   
-        <footer>
-            <div class="rodape container">
-                <div class="row">
-                    <div class="col-sm-12 rodape_1">
-                        RODAPE
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- fim do rodape -->        
+        <?php
+            require_once './assets/rodape.php';
+        ?>
         
         <!-- ------------------------------ -->   
         

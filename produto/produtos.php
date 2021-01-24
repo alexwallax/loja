@@ -44,9 +44,18 @@ if (isset($_POST['remover'])) {
         <meta charset="UTF-8">
         <title>Produtos</title>
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <div class="container">
+        
+        <!--cabecalho-->
+        <?php
+        require_once '../assets/cabecalho.php';
+        ?>
+        <!--fim cabecalho-->
+        
+        
+        <div class="container conteudo">
             <div class="row">
                 <div class="col-sm-6">
                     <fieldset>
@@ -132,5 +141,12 @@ if (isset($_POST['remover'])) {
                 </div>
             </div>
         </div>
+        
+        <!--rodape-->
+        <?php
+            require_once '../assets/rodape.php';
+        ?>
+        <!--fim rodape-->
+        
     </body>
 </html>

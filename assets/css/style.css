@@ -24,45 +24,31 @@ html,body{
 }
 
 .logo{
-    padding: 16px;
-    height: 60px;
-    float: left;
-}
-
-.menu ul li {
-    display: inline-block;
-    padding: 16px;
-    height: 60px;
-    float: right;
+    margin-left: 50px;
 }
 
 .menu {
     float: right;
+    border: 2px solid black;
 }
 
+.menu2 {
+    margin-left: 1000px;
 
+}
 /********** fim Cabeçalho ***********/
 
 
 
 /********** corpo ***********/
 .conteudo{
-    height: 500px;
+    height: auto;
     background: #eee;
 }
 
-.conteudo_1{
-    margin-top: 5px;
-    float: left;
-    height: 490px;
-    background: white;
-}
-
-.conteudo_2{
-    margin-top: 5px;
-    float: right;
-    height: 490px;
-    background: #c3e6cb;
+.conteudo02{
+    height: 520px;
+    background: #eee;
 }
 
 /********** fim corpo ***********/

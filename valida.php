@@ -11,14 +11,16 @@ $dao = new UsuarioDAO();
 
 $dao->logar($login, $senha);
 
-if ($dao->logar($login, $senha)) {
-    $usuario = $dao->buscarUsuarioPorLogin($login);
-    $_SESSION['usuario_logado'] = $usuario;
-    if ($usuario->getTipo() == 'produtos') {
-        header("location:produto/produtos.php");
-    } else if ($usuario->getTipo() == 'categorias') {
-        header("location:categoria/categorias.php");
-    } else {
-        header("location:index.php");
+
+    if ($dao->logar($login, $senha)) {
+        $usuario = $dao->buscarUsuarioPorLogin($login);
+
+        $_SESSION['usuario_logado'] = $usuario;
+        if ($usuario->getTipo() == 'produtos') {
+            header("location:produto/produtos.php");
+        } else if ($usuario->getTipo() == 'categorias') {
+            header("location:categoria/categorias.php");
+        } else {
+            header("location:index.php");
+        } 
     }
-}
